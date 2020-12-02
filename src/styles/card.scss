@@ -1,0 +1,31 @@
+.Card {
+  box-shadow: 3px 5px 8px 0px #00000024;
+  
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &-content {
+    padding: 15px;
+    text-align: left;
+
+    &__title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &__section {
+      font-size: 14px;
+      margin: 5px 0;
+
+      .value {
+        color: rgba(0, 0, 0, 0.418);
+      }
+    }
+  }
+}
