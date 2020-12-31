@@ -16,7 +16,7 @@ function Card({ character }) {
                 </p>
             </div>
             <div>
-                <LikeButton />
+                <LikeButton color="red" />
             </div>
         </div>
     );
