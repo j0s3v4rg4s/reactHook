@@ -1,36 +1,11 @@
 import React from 'react';
 import '../styles/Like.scss';
 
-const LikeButton = ({ onClick, color = '#b4b4b4' }) => {
-  const clickBtn = (event) => {
-    const button = event.currentTarget;
-
-    const circle = document.createElement('span');
-    const diameter = Math.max(button.clientWidth, button.clientHeight);
-    const radius = diameter / 2;
-
-    circle.style.width = circle.style.height = `${diameter}px`;
-    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-    circle.style.top = `${event.pageY - button.offsetTop - radius}px`;
-    circle.classList.add('ripple');
-    circle.style.backgroundColor = color
-
-    const ripple = button.getElementsByClassName('ripple')[0];
-
-    if (ripple) {
-      ripple.remove();
-    }
-
-    button.appendChild(circle);
-
-    if (onClick) {
-      onClick(event);
-    }
-  };
+const LikeButton = ({value = false, onChange}) => {
 
   return (
     <label className="button">
-      <input type="checkbox" onChange={(e) => console.log(e.target.checked)} />
+      <input type="checkbox" defaultChecked={value} onChange={onChange} />
       <span className="wrapper">
         <svg viewBox="0 -0.5 20 20" className="icon">
           <g>
@@ -43,7 +18,7 @@ const LikeButton = ({ onClick, color = '#b4b4b4' }) => {
           </g>
         </svg>
       </span>
-      <span className="ripple"></span>
+      <span className="ripple"/>
     </label>
   );
 };
